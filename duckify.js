@@ -1,24 +1,25 @@
 /**
  * @param {Element} element 
- * @param {string} pattern 
- * @param {string} replacement 
+ * @param {Array} terms 
  */
-function replaceInText(element, pattern, replacement) {
+function replaceInText(element, terms) {
     for (let node of element.childNodes) {
         switch (node.nodeType) {
             case Node.ELEMENT_NODE:
-                replaceInText(node, pattern, replacement);
+                replaceInText(node, terms);
                 break;
             case Node.TEXT_NODE:
-                node.textContent = node.textContent.replace(pattern, replacement);
+                for (let term of terms) {
+                    node.textContent = node.textContent.replace(term.name, term.replacement);
+                }
                 break;
             case Node.DOCUMENT_NODE:
-                replaceInText(node, pattern, replacement);
+                replaceInText(node, terms);
         }
     }
 }
 
 const body = document.querySelector("body")
-replaceInText(body, "Kaczynski", "🦆")
+replaceInText(body, window.duckifyTerms)
 
 console.log("🦆: Quack!")
