@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Duckify",
+    "version": "0.0.1",
+    "description": "Turns hateful content into peaceful quacking animals.",
+    
+    "icons": {
+        "48": "icons/duckify.svg",
+        "96": "icons/duckify.svg"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "duckify.js"
+            ]
+        }
+    ]
+}
