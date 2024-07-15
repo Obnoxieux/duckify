@@ -3,20 +3,15 @@
     "name": "Duckify",
     "version": "0.0.1",
     "description": "Turns hateful content into peaceful quacking animals.",
-    
+    "homepage_url": "https://github.com/Obnoxieux/duckify",
     "icons": {
         "48": "icons/duckify.svg",
         "96": "icons/duckify.svg"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "terms.js",
-                "duckify.js"
-            ]
-        }
-    ]
+    "permissions": ["activeTab"],
+    "browser_action": {
+        "default_icon": "icons/duckify.svg",
+        "default_title": "Duckify",
+        "default_popup": "popup/index.html"
+    }
 }
