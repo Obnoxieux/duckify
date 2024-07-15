@@ -1,10 +1,26 @@
 html,
 body {
-    width: 100px;
+    width: 200px;
 }
 
 .hidden {
     display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: #23222b;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .container {
+        background-color: white;
+    }
+}
+
+.container {
+    padding: 1rem;
 }
 
 button {
@@ -12,20 +28,22 @@ button {
     width: 100%;
     margin: 3% auto;
     padding: 4px;
+    border-radius: 10px;
     text-align: center;
     font-size: 1.5em;
     cursor: pointer;
-    background-color: #e5f2f2;
+    color: white;
+    background-color: #ee22aa;
 }
 
 button:hover {
-    background-color: #cff2f2;
+    background-color: #fa4bc2;
 }
 
 button[type="reset"] {
-    background-color: #fbfbc9;
+    background-color: #10576d;
 }
 
 button[type="reset"]:hover {
-    background-color: #eaea9d;
+    background-color: #187a99;
 }

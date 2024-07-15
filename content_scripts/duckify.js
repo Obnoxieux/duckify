@@ -48,7 +48,7 @@
         console.log("🦆: Quack!")
     }
 
-    function removeExistingBeasts() {
+    function doReset() {
         console.log("Reset triggered")
     }
 
@@ -59,7 +59,7 @@
         if (message.command === "duckify") {
             insertDucks();
         } else if (message.command === "reset") {
-            removeExistingBeasts();
+            doReset();
         }
     });
 })();
